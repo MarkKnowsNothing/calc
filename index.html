@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Markulator</title>
 </head>
 <body>
     <main>
         <h1>Markulator</h1>
-        <h2>Not-so-original calculator you'll ever use</h2>
+        <p>Not-so-original calculator you'll ever use</p>
         <div class="calc">
             <div class="calc__display">
                 <div class="calc__display-screen">
@@ -19,29 +20,39 @@
             </div>
             <div class="calc__buttons">
                 <!--ROW 1-->
-                <div class="calc__buttons-btn clear" id="AC">AC</div>
-                <div class="calc__buttons-btn clear" id="C">C</div>
-                <div class="calc__buttons-btn operator" id="percent">%</div>
-                <div class="calc__buttons-btn operator" id="divide">÷</div>
+                <div class="calc__buttons-row">
+                    <div class="btn clear" id="AC">AC</div>
+                    <div class="btn clear" id="C">C</div>
+                    <div class="btn operator" id="percent">%</div>
+                    <div class="btn operator" id="divide">÷</div>
+                </div>
                 <!--ROW 2-->
-                <div class="calc__buttons-btn digit" id="9">9</div>
-                <div class="calc__buttons-btn digit" id="8">8</div>
-                <div class="calc__buttons-btn digit" id="7">7</div>
-                <div class="calc__buttons-btn operator" id="multiply">×</div>
+                <div class="calc__buttons-row">
+                    <div class="btn digit" id="9">9</div>
+                    <div class="btn digit" id="8">8</div>
+                    <div class="btn digit" id="7">7</div>
+                    <div class="btn operator" id="multiply">×</div>
+                </div>
                 <!--ROW 3-->
-                <div class="calc__buttons-btn digit" id="6">6</div>
-                <div class="calc__buttons-btn digit" id="5">5</div>
-                <div class="calc__buttons-btn digit" id="4">4</div>
-                <div class="calc__buttons-btn operator" id="minus">-</div>
+                <div class="calc__buttons-row">
+                    <div class="btn digit" id="6">6</div>
+                    <div class="btn digit" id="5">5</div>
+                    <div class="btn digit" id="4">4</div>
+                    <div class="btn operator" id="minus">-</div>
+                </div>
                 <!--ROW 4-->
-                <div class="calc__buttons-btn digit" id="3">3</div>
-                <div class="calc__buttons-btn digit" id="2">2</div>
-                <div class="calc__buttons-btn digit" id="1">1</div>
-                <div class="calc__buttons-btn operator" id="plus">+</div>
+                <div class="calc__buttons-row">
+                    <div class="btn digit" id="3">3</div>
+                    <div class="btn digit" id="2">2</div>
+                    <div class="btn digit" id="1">1</div>
+                    <div class="btn operator" id="plus">+</div>
+                </div>
                 <!--ROW 5-->
-                <div class="calc__buttons-btn digit" id="0">0</div>
-                <div class="calc__buttons-btn digit" id="dot">.</div>
-                <div class="calc__buttons-btn equal" id="equal">=</div>
+                <div class="calc__buttons-row">
+                    <div class="btn digit" id="0">0</div>
+                    <div class="btn digit" id="dot">.</div>
+                    <div class="btn equal" id="equal">=</div>
+                </div>
             </div>
         </div>
     </main>
