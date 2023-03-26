@@ -5,6 +5,7 @@ const output = document.querySelector("#output");
 
 const buttons = document.querySelectorAll(".btn");
 const operators = document.querySelectorAll(".operator");
+const dot = document.querySelector("#dot");
 const equal = document.querySelector(".equal");
 
 
@@ -37,6 +38,10 @@ function divide(a, b) {
 function power(a, b) {
     return a ** b;
 }; // power
+
+function round(value) {
+    return Math.round(value * 1000) / 1000;
+}; // round
 
 
 // OPERATION //
@@ -82,7 +87,7 @@ function calculate() {
     // 2. Returns the result to the output text content.
     // 3. Let number one equals the result for future calculations.
     // 4. Let number two equals number one temporarily for future calculations.
-    result = operate(numberOne, operatorValue, numberTwo);
+    result = round(operate(numberOne, operatorValue, numberTwo));
     output.textContent = result;
     numberOne = result;
     numberTwo = numberOne;
@@ -157,6 +162,17 @@ buttons.forEach(button => button.addEventListener("click", () => {
                                 case "=":
                                     input.textContent += "";
                                     break;
+                                case ".":
+                                    switch (numberTwo.includes(".")) {
+                                        case true:
+                                            input.textContent += "";
+                                            numberTwo.textContent += "";
+                                            break;
+                                        default:
+                                            input.textContent += ".";
+                                            numberTwo += ".";
+                                    };
+                                    break;
                                 default:
                                     input.textContent += button.textContent;
                                     numberTwo += button.textContent;
@@ -172,7 +188,7 @@ operators.forEach(operator => operator.addEventListener("click", () => {
     // slice out the excess operator from number one and update the operator value with the button clicked.
     // 2. If the operator value is not empty (if the user typed in an operator before), slice out the excess operator
     // from number two, calculate the 2 numbers, update the operator value and change the input display accordingly.
-    // *This if else statement ensures that the multiple string value calculation is correct and does not cause any errors.
+    // => This if else statement ensures that the multiple string value calculation is correct and does not cause any errors.
     // 3. When the operator button is clicked, empty the number two variable.
     if (operatorValue === "") {
         result = numberTwo;
@@ -194,7 +210,7 @@ equal.addEventListener("click", () => {
     // set the output value to equal to the input value.
     // 2. If the operator value is not empty, continue the calculation as normal, output the result and delete the operator.
     if (operatorValue === "") {
-        output.textContent = input.textContent;
+        output.textContent = round(input.textContent);
     } else {
         calculate();
         input.textContent = result;
