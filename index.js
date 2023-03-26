@@ -64,6 +64,8 @@ function operate(a, operator, b) {
             return divide(a, b);
         case "^":
             return power(a, b);
+        default:
+            return null;
     };
 };
 
@@ -122,10 +124,12 @@ buttons.forEach(button => button.addEventListener("click", () => {
                 case "×":
                 case "÷":
                 case "^":
+                    operatorValue = "";
+                    numberTwo = numberOne;
                     break;
                 default:
                     numberTwo = numberTwo.slice(0, -1);
-            }
+            };
             input.textContent = input.textContent.slice(0, -1);
             break;
         case "equal":

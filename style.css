@@ -57,7 +57,7 @@ h1 {
     font-family: 'Press Start 2P', cursive;
     font-size: 16px;
     text-align: center;
-    margin: 0 0 2rem 0;
+    margin: 0 0 1rem 0;
     color: #666;
 }
 
@@ -71,7 +71,7 @@ p {
     flex-direction: column;
 
     margin: 1rem;
-    padding: 2rem;
+    padding: 1.5rem;
     background-color: #0a0a0a;
     border-radius: 1rem;
     box-shadow: 5px 5px 5px #000;
@@ -141,6 +141,25 @@ p {
     border-radius: 50%;
     box-shadow: 0px 5px 3px #000;
     cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+
+    transition: .25s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #eee;
+    color: #0a0a0a;
+    transform: translateY(-0.1rem);
+}
+
+.clear:hover {
+    background-color: #f96e46;
+}
+
+.operator:hover {
+    background-color: #00e8fc;
 }
 
 .equal {
@@ -148,10 +167,14 @@ p {
     border-radius: 2.5rem;
 }
 
+.equal:hover {
+    background-color: #f9c846;
+}
+
 footer {
     width: 100%;
 
-    color: #f9faf8;
+    color: #999;
     text-align: center;
 }
 
@@ -160,11 +183,11 @@ footer p {
 }
 
 footer p a {
-    color: #f9faf8;
+    color: #999;
     text-decoration: underline;
     transition: .25s ease-in-out;
 }
 
 footer p a:hover {
-    color: #e5e7eb;
+    color: #aaa;
 }
